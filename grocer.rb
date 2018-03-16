@@ -20,10 +20,10 @@ def apply_coupons(cart, coupons)
       if coupon[:item] == item 
         if coupon[:num] == info[:count]
           new_cart[item] = info 
+          new_cart[item][:price] = coupon[:cost]
           binding.pry 
-          info[:price] = coupon[:cost]
         elsif coupon[:num] < info[:count] 
-          
+          new_cart[item]
         end 
       end 
     end 
