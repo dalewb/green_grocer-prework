@@ -21,15 +21,20 @@ def apply_coupons(cart, coupons)
         if coupon[:num] == info[:count]
           new_cart["#{item} W/COUPON"] = info 
           new_cart[item][:price] = coupon[:cost]
-          binding.pry 
         elsif coupon[:num] < info[:count] 
           remainder = cart[item][:count] - coupon[:num] 
           new_cart["#{item} W/COUPON"] = info 
           new_cart["#{item} W/COUPON"][:count] = coupon[:num]
+          if remainder > 0 
+            new_cart[item] = info 
+            new_cart[item][:count] = remainder 
+          end 
         end 
       end 
     end 
   end 
+  binding.pry 
+  new_cart
 end
 
 def apply_clearance(cart)
