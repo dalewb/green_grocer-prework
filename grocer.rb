@@ -26,6 +26,7 @@ def apply_coupons(cart, coupons)
           remainder = cart[item][:count] - coupon[:num] 
           new_cart["#{item} W/COUPON"] = info 
           new_cart["#{item} W/COUPON"][:count] = coupon[:num]
+          new_cart["#{item} W/COUPON"][:price] = coupon[:cost]
           if remainder > 0 
             new_cart[item] = info 
             new_cart[item][:count] = remainder 
