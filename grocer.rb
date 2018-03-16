@@ -19,11 +19,12 @@ def apply_coupons(cart, coupons)
     cart.each do |item, info|
       if coupon[:item] == item 
         if coupon[:num] == info[:count]
-          new_cart[item] = info 
+          new_cart["#{item} W/COUPON"] = info 
           new_cart[item][:price] = coupon[:cost]
           binding.pry 
         elsif coupon[:num] < info[:count] 
-          new_cart[item]
+          new_cart["#{item} W/COUPON"] = info 
+          new_cart["#{item} W/COUPON"]
         end 
       end 
     end 
