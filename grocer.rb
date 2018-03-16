@@ -14,19 +14,7 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  new_cart = {} 
-  cart.each do |item, info|
-    coupons.each do |data|
-      info.keys.each do |key|
-        if data[:item] == item 
-          temp = {} 
-          
-          new_cart["#{item} W/COUPON"]
-        end 
-        binding.pry 
-      end 
-    end 
-  end 
+  
 end
 
 def apply_clearance(cart)
