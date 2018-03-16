@@ -22,6 +22,7 @@ def apply_coupons(cart, coupons)
           new_cart["#{item} W/COUPON"] = info 
           new_cart["#{item} W/COUPON"][:price] = coupon[:cost]
           new_cart["#{item} W/COUPON"][:count] = 1
+          binding.pry 
         elsif coupon[:num] < info[:count] 
           remainder = cart[item][:count] - coupon[:num] 
           new_cart["#{item} W/COUPON"] = info 
